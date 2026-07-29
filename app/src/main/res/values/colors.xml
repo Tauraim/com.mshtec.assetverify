@@ -1,36 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <!-- Basic Colors -->
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <!-- Material 3 Primary Colors -->
+    <!-- ===================================================== -->
+    <!-- MSH-TEC BRAND COLORS -->
+    <!-- ===================================================== -->
+
+    <!-- Primary -->
     <color name="primary">#006495</color>
     <color name="onPrimary">#FFFFFF</color>
     <color name="primaryContainer">#CBE6FF</color>
     <color name="onPrimaryContainer">#001E30</color>
 
-    <!-- Material 3 Secondary Colors -->
-    <color name="secondary">#50606E</color>
+    <!-- Secondary -->
+    <color name="secondary">#00ACC1</color>
     <color name="onSecondary">#FFFFFF</color>
-    <color name="secondaryContainer">#D3E5F5</color>
-    <color name="onSecondaryContainer">#0C1D29</color>
+    <color name="secondaryContainer">#D3F5F8</color>
+    <color name="onSecondaryContainer">#002022</color>
 
-    <!-- Material 3 Tertiary Colors -->
+    <!-- Tertiary -->
     <color name="tertiary">#65587E</color>
     <color name="onTertiary">#FFFFFF</color>
     <color name="tertiaryContainer">#EBDDFF</color>
     <color name="onTertiaryContainer">#201637</color>
 
-    <!-- Material 3 Error Colors -->
+    <!-- Error -->
     <color name="error">#BA1A1A</color>
     <color name="onError">#FFFFFF</color>
     <color name="errorContainer">#FFDAD6</color>
     <color name="onErrorContainer">#410002</color>
 
-    <!-- Material 3 Surface Colors -->
+    <!-- ===================================================== -->
+    <!-- SURFACE -->
+    <!-- ===================================================== -->
+
+    <color name="background">#F4F7FC</color>
+
     <color name="surface">#FBFCFF</color>
     <color name="onSurface">#191C1E</color>
+
     <color name="surfaceVariant">#DDE3EA</color>
     <color name="onSurfaceVariant">#41484D</color>
+
     <color name="outline">#71787D</color>
+
+    <!-- ===================================================== -->
+    <!-- DASHBOARD KPI COLORS -->
+    <!-- ===================================================== -->
+
+    <color name="verified">#2E7D32</color>
+    <color name="pending">#F9A825</color>
+    <color name="missing">#D32F2F</color>
+    <color name="damaged">#6A1B9A</color>
+
+    <!-- ===================================================== -->
+    <!-- QUICK ACTION COLORS -->
+    <!-- ===================================================== -->
+
+    <color name="scanBlue">#0288D1</color>
+    <color name="searchBlue">#1565C0</color>
+    <color name="infraGreen">#388E3C</color>
+    <color name="assetOrange">#FB8C00</color>
+    <color name="gpsRed">#E53935</color>
+    <color name="syncPurple">#7B1FA2</color>
+
+    <!-- ===================================================== -->
+    <!-- EXTRA UI COLORS -->
+    <!-- ===================================================== -->
+
+    <color name="cardBackground">#FFFFFF</color>
+    <color name="divider">#E0E0E0</color>
+
+    <color name="textPrimary">#212121</color>
+    <color name="textSecondary">#616161</color>
+
 </resources>

@@ -1,0 +1,3 @@
+- [x] Update `LoginActivity.java` to navigate to `Dashboard`
+- [x] Update `activity_dashboard.xml` layout behavior and alignment
+- [x] Verify build and navigation
