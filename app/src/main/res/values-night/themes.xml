@@ -1,7 +1,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.MSH_VERIFY" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <!-- In dark theme, we override colors if needed, but here we'll just inherit and fix status bar -->
+        <item name="android:windowLightStatusBar">false</item>
     </style>
 </resources>
