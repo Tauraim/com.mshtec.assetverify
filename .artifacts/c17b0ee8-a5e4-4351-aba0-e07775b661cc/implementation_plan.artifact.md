@@ -1,28 +1,34 @@
-# Implementation Plan - Fix Dashboard Visibility and Navigation
+# Implementation Plan - Enhance Dashboard Icons and Notifications
 
-The user is not seeing the Dashboard screen when running the app. Research shows that `SplashActivity` navigates to `LoginActivity`, which then navigates to `MainActivity` instead of the `Dashboard` activity. Additionally, the dashboard layout needs some adjustments to match the desired visual structure.
+The user wants to adjust the appearance of the dashboard icons (color, size) and add a notification count badge to the bell icon.
 
 ## Proposed Changes
 
-### Navigation Fix
+### Icon Appearance
 
-#### [MODIFY] [LoginActivity.java](file:///C:/Users/tmuze/AndroidStudioProjects/MSH_VERIFY/app/src/main/java/com/example/msh_verify/LoginActivity.java)
-Update the login button's click listener to navigate to `Dashboard` instead of `MainActivity`.
+#### [MODIFY] [ic_notifications.xml](file:///C:/Users/tmuze/AndroidStudioProjects/MSH_VERIFY/app/src/main/res/drawable/ic_notifications.xml)
+- Change size from `24dp` to `28dp`.
+- Update `android:tint` to `@color/onPrimary` (white) for better visibility on the blue toolbar.
 
-### Dashboard Layout Improvements
+#### [MODIFY] [ic_account_circle.xml](file:///C:/Users/tmuze/AndroidStudioProjects/MSH_VERIFY/app/src/main/res/drawable/ic_account_circle.xml)
+- Change size from `24dp` to `28dp`.
+- Update `android:tint` to `@color/onPrimary`.
 
-#### [MODIFY] [activity_dashboard.xml](file:///C:/Users/tmuze/AndroidStudioProjects/MSH_VERIFY/app/src/main/res/layout/activity_dashboard.xml)
-- Remove `app:titleCentered="true"` from the `MaterialToolbar` to ensure the title is correctly aligned (standard left-alignment after the navigation icon).
-- Replace `android:layout_marginTop="?attr/actionBarSize"` in `NestedScrollView` with `app:layout_behavior="@string/appbar_scrolling_view_behavior"` for better integration with `CoordinatorLayout`.
-- Ensure the FAB is correctly positioned and visible.
+#### [MODIFY] [ic_menu.xml](file:///C:/Users/tmuze/AndroidStudioProjects/MSH_VERIFY/app/src/main/res/drawable/ic_menu.xml)
+- Change size from `24dp` to `28dp`.
+- Update `android:tint` to `@color/onPrimary`.
+
+### Notification Badge
+
+#### [MODIFY] [Dashboard.java](file:///C:/Users/tmuze/AndroidStudioProjects/MSH_VERIFY/app/src/main/java/com/example/msh_verify/Dashboard.java)
+- Use `BadgeDrawable` and `BadgeUtils` to attach a notification count (e.g., "5") to the notification menu item.
+- Note: `BadgeUtils` may require an `@UnsafeOptInUsageError` or similar annotation depending on the library version.
 
 ## Verification Plan
 
 ### Automated Tests
-- Run `./gradlew :app:assembleDebug` to ensure the project still builds.
+- Run `./gradlew :app:assembleDebug`.
 
 ### Manual Verification
-1. Deploy the app.
-2. Wait for `SplashActivity` to transition to `LoginActivity`.
-3. Click the Login button.
-4. Verify that the `Dashboard` screen is displayed with the expected top bar (hamburger, title, icons) and FAB.
+- Deploy the app.
+- Confirm the top bar icons are white, larger, and the bell icon displays a red badge with the number 5.

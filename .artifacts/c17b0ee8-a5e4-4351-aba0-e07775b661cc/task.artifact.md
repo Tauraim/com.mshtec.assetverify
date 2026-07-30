@@ -1,3 +1,5 @@
-- [x] Update `LoginActivity.java` to navigate to `Dashboard`
-- [x] Update `activity_dashboard.xml` layout behavior and alignment
-- [x] Verify build and navigation
+- [x] Increase size and change color to white for `ic_notifications.xml`
+- [x] Increase size and change color to white for `ic_account_circle.xml`
+- [x] Increase size and change color to white for `ic_menu.xml`
+- [x] Implement notification badge in `Dashboard.java`
+- [x] Verify build and UI

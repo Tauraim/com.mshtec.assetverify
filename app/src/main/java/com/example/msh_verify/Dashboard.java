@@ -1,18 +1,29 @@
 package com.example.msh_verify;
 
+import android.widget.TextView;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 import android.os.Bundle;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.appbar.MaterialToolbar;
+import com.google.android.material.badge.BadgeDrawable;
+import com.google.android.material.badge.BadgeUtils;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import android.annotation.SuppressLint;
+
 
 public class Dashboard extends AppCompatActivity {
 
     private MaterialToolbar topAppBar;
     private FloatingActionButton fabVerify;
 
+    @SuppressLint("UnsafeOptInUsageError")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,5 +67,13 @@ public class Dashboard extends AppCompatActivity {
                         Toast.LENGTH_SHORT).show()
 
         );
+
+        // Add Notification Badge
+        topAppBar.post(() -> {
+            BadgeDrawable badgeDrawable = BadgeDrawable.create(this);
+            badgeDrawable.setNumber(5);
+            badgeDrawable.setVisible(true);
+            BadgeUtils.attachBadgeDrawable(badgeDrawable, topAppBar, R.id.action_notification);
+        });
     }
 }

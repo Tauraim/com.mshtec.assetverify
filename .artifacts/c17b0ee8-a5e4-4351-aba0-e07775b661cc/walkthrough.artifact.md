@@ -1,22 +1,28 @@
-# Walkthrough - Dashboard Navigation and Layout Fix
+# Walkthrough - Enhanced Dashboard Icons and Notifications
 
-I have fixed the issue where the Dashboard was not appearing after login and adjusted its layout for better visual consistency.
+I have updated the dashboard icons to improve their visibility and added a functional notification badge.
 
 ## Changes Made
 
-### Navigation Fix
-- [LoginActivity.java](file:///C:/Users/tmuze/AndroidStudioProjects/MSH_VERIFY/app/src/main/java/com/example/msh_verify/LoginActivity.java): Updated the login button handler to start the `Dashboard` activity instead of `MainActivity`.
+### Icon Appearance Improvements
+- **Updated Icon Size**: Increased the size of `ic_menu`, `ic_notifications`, and `ic_account_circle` from `24dp` to `28dp` for better touch targets and visual prominence.
+- **Updated Icon Color**: Set the tint of all top bar icons to white (`@color/onPrimary`) to ensure they stand out clearly against the blue primary-colored toolbar.
 
-### Dashboard Layout Improvements
-- [activity_dashboard.xml](file:///C:/Users/tmuze/AndroidStudioProjects/MSH_VERIFY/app/src/main/res/layout/activity_dashboard.xml):
-    - Removed `app:titleCentered="true"` to align the title naturally next to the menu icon.
-    - Replaced `android:layout_marginTop` with `app:layout_behavior="@string/appbar_scrolling_view_behavior"` to correctly handle scrolling under the App Bar.
+### Notification Badge
+- **Implemented Badge**: Added logic in `Dashboard.java` to display a red notification badge with the number **5** on the bell icon.
+- **Material Components Integration**: Used `BadgeDrawable` and `BadgeUtils` from the Material Design library for a native look and feel.
 
 ## Verification Results
 
 ### Automated Tests
 - Ran `./gradlew :app:assembleDebug`.
-- **Result**: Build successful.
+- **Result**: Build finished successfully.
 
-### Manual Verification Required
-- Launch the app, log in, and verify that the Dashboard screen now appears with the expected header and floating action button.
+### Manual Verification
+- Deploy the app and navigate to the Dashboard.
+- **Expected UI**:
+    - The hamburger menu, notification bell, and profile icons should be white and slightly larger.
+    - The notification bell should have a small red circle with the number "5" in the top-right corner.
+
+> [!NOTE]
+> The `BadgeUtils` API is currently experimental in Material Components, so I've added the necessary `@SuppressLint("UnsafeOptInUsageError")` annotation to ensure the build remains stable.
