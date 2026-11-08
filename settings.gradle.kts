@@ -1,3 +1,19 @@
+// Fix conflict between ANDROID_PREFS_ROOT and ANDROID_USER_HOME environment variables
+try {
+    val processEnvironment = Class.forName("java.lang.ProcessEnvironment")
+    val theEnvironmentField = processEnvironment.getDeclaredField("theEnvironment")
+    theEnvironmentField.isAccessible = true
+    val map = theEnvironmentField.get(null) as MutableMap<String, String>
+    map.remove("ANDROID_PREFS_ROOT")
+
+    val theCaseInsensitiveEnvironmentField = processEnvironment.getDeclaredField("theCaseInsensitiveEnvironment")
+    theCaseInsensitiveEnvironmentField.isAccessible = true
+    val ciMap = theCaseInsensitiveEnvironmentField.get(null) as MutableMap<String, String>
+    ciMap.remove("ANDROID_PREFS_ROOT")
+} catch (e: Exception) {
+    // ignore
+}
+
 pluginManagement {
     repositories {
         google {
@@ -24,4 +40,3 @@ dependencyResolutionManagement {
 
 rootProject.name = "MSH_VERIFY"
 include(":app")
- 

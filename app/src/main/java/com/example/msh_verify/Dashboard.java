@@ -22,6 +22,7 @@ public class Dashboard extends AppCompatActivity {
 
     private MaterialToolbar topAppBar;
     private FloatingActionButton fabVerify;
+    private TextView txtOfficer;
 
     @SuppressLint("UnsafeOptInUsageError")
     @Override
@@ -32,6 +33,13 @@ public class Dashboard extends AppCompatActivity {
         // Initialize Views
         topAppBar = findViewById(R.id.topAppBar);
         fabVerify = findViewById(R.id.fabVerify);
+        txtOfficer = findViewById(R.id.txtOfficer);
+
+        // Get and display username from LoginActivity if available
+        String username = getIntent().getStringExtra("USERNAME");
+        if (username != null && !username.isEmpty()) {
+            txtOfficer.setText(username);
+        }
 
         // Set Toolbar as Action Bar
         setSupportActionBar(topAppBar);
