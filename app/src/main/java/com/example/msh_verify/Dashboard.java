@@ -1,5 +1,6 @@
 package com.example.msh_verify;
 
+import android.content.Intent;
 import android.widget.TextView;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -68,13 +69,10 @@ public class Dashboard extends AppCompatActivity {
         });
 
         // Floating Action Button
-        fabVerify.setOnClickListener(view ->
-
-                Toast.makeText(this,
-                        "Start Asset Verification",
-                        Toast.LENGTH_SHORT).show()
-
-        );
+        fabVerify.setOnClickListener(view -> {
+            Intent intent = new Intent(Dashboard.this, RoomLookupActivity.class);
+            startActivity(intent);
+        });
 
         // Add Notification Badge
         topAppBar.post(() -> {
