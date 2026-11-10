@@ -28,3 +28,17 @@ Modules
 | [ Login ]               |
  -------------------------
                                     
+Camera & Hardware Laser Barcode/QR Scanning Walkthrough
+Added support for camera-based QR/barcode scanning and external hardware laser barcode scanners.
+Changes Made
+Permissions & Manifest
+•
+Added <uses-permission android:name="android.permission.CAMERA" /> and camera feature declarations to  AndroidManifest.xml.
+Hardware Laser Scanner & Camera Integration
+•
+Updated  RoomLookupActivity.java:
+◦
+Hardware Laser Scanners (Keyboard Wedge / HID): Added setOnEditorActionListener on the barcode input field to automatically trigger lookup upon pressing Enter or completing input from external handheld laser barcode scanners.
+◦
+Camera QR/Barcode Scanning: Added runtime camera permission handling (ActivityResultContracts.RequestPermission) and scanner intent launcher (barcodeScannerLauncher) with fallback test simulator options.
+Validation Results
