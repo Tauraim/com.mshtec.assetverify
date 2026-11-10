@@ -1,0 +1,6 @@
+- [ ] Create DatabaseHelper and models
+- [ ] Create layout XML files for room lookup and asset verification
+- [ ] Implement RoomLookupActivity with barcode input, lookup logic, and room creation prompt
+- [ ] Implement AssetVerificationActivity for verifying assets in the room
+- [ ] Update Dashboard FAB listener and AndroidManifest.xml
+- [ ] Build and verify project compilation
